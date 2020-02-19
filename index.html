@@ -4,25 +4,39 @@
     <meta name="viewport" content="width=1, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="./assets/style.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans:100,200,300,400,500,600,700,900&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:100,200,300,400,500,600,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Questrial:100,200,300,400,500,600,700,900&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="dns-prefetch" href="//code.jquery.com">
     <title>Project01</title>
+
+    <style>
+  
+        
+    </style>
 
     <body>
         <main class="container center-align">
-            <h1>Mood Swing</h1>
-            <h3>Tell me how you're feeling</h3>
+
+                <h1 class="yummy">MOOD SWING</h1>
+
+            <h3>Tell me how you're feeling...</h3>
             <br><br>
-            <div class="row">
-                <a class="waves-effect waves-light pulse btn-large yellow accent-1">Happy</a>
-                <a class="waves-effect waves-light pulse btn-large purple darken-2">Focus</a>
-                <a class="waves-effect waves-light pulse btn-large red darken-2">Angry</a>
-                <a class="waves-effect waves-light pulse btn-large blue darken-3">Melancholy</a>
-                <a class="waves-effect waves-light pulse btn-large green accent-2">Waddup</a>
+            <div class="row animate">
+                <a class="waves-effect waves-light pulse btn-large yummyBtn accent-1 tite z-depth-2">Happy</a>
+                <a class="waves-effect waves-light pulse btn-large yummyBtn darken-2 tite z-depth-2">Focus</a>
+                <a class="waves-effect waves-light pulse btn-large yummyBtn darken-2 tite z-depth-2">Angry</a>
+                <a class="waves-effect waves-light pulse btn-large yummyBtn darken-3 tite z-depth-2">Melancholy</a>
+                <a class="waves-effect waves-light pulse btn-large yummyBtn accent-2 tite z-depth-2">Waddup</a>
             </div>
         </main>
         <br> <br>
         <div class="container">
             <div class="col s12 m8 offset-m2 l6 offset-l3">
-                <div class="row">
+                <div class="row moodBtn 01">
                     <div class="card-panel col s6 offset-l2 grey lighten-5 z-depth-1">
                         <div class="row valign-wrapper">
                             <div class="col s2">
@@ -50,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row bounce">
                     <div class="card-panel col s6 offset-l2 grey lighten-5 z-depth-1">
                         <div class="row valign-wrapper">
                             <div class="col s2">
@@ -83,7 +97,16 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
         <script src="./assets/script.js"></script>
+        <script>
+            // const element =  document.querySelector('.bounce')
+            // element.classList.add('animated', 'bounceInLeft')
+            // const element2 =  document.querySelector('.yummy')
+            // element2.classList.add('animated', 'bounceInLeft')
+            
+        </script>
     </body>
 
 </html>
