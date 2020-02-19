@@ -1,24 +1,49 @@
-console.log("Hopefully it works?");
+//Variable Assignments
+var queryURL = "https://openwhyd.org/u/5e4d6e9f7853a6bfdd389ff7/playlist/0?format=json"
+var container = $("#parent");
 
-const element =  document.querySelector('.bounce')
-element.classList.add('animated', 'bounceInLeft')
-// const element2 =  document.querySelector('.yummy')
-// element2.classList.add('animated', 'bounceInLeft')
-            
+function request(){
+    container.empty();
+    console.log($(this).text());
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        dataType: "jsonp"
+    }).then(function(response){
+        console.log(response);
+        for (i=0;i<4;i++){
+            var songName = $("<span class='black-text' id='song-name'>");
+            var newRow = $("<div class='row getIn'>");
+            var assemblyRow = $("<div class='card-panel col s6 offset-l2 grey lighten-5 z-depth-1'>");
+            var allignmentRow = $("<div class= 'row valign-wrapper'>");
+            var imgCol = $("<div class='col s2'>");
+            var textCol = $("<div class='col s10'>");
+            songName.text(response[0].name);
+            var songImg = $("<img src='"+response[0].img+"' alt='"+songName+"' class='circle responsive-img'>");
+            textCol.append(songName);
+            imgCol.append($("<br>"));
+            imgCol.append(songImg);
+            allignmentRow.append(imgCol);
+            allignmentRow.append(textCol);
+            assemblyRow.append(allignmentRow);
+            newRow.append(assemblyRow);
+            container.append(newRow);
+            slideIn();
+        }
+    })
+}
 
-    // $(document).ready(function(){
-    //     $('.js--triggerAnimation').click(function(e){
-    //       e.preventDefault();
-    //       var anim = $('.js--animations').val();
-    //       testAnim(anim);
-    //     });
-var songName = $("#song-name");
-var queryURL = "https://openwhyd.org/u/4d94501d1f78ac091dbc9b4d/playlist/10?format=json&limit=10000"
+//Animation Controller
+function slideIn(){
+    var element =  $(".getIn");
+    element.addClass("animated bounceInLeft");
+}
+//Animation Reset
+function resetAnimate(){
+        var element = $(".getIn");
+        element.removeClass("animated bounceInLeft");
+}
 
-$.ajax({
-    url: queryURL,
-    method: "GET",
-    dataType: "jsonp"
-}).then(function(response){
-    songName.text(response[0].name);
-})
+//Event Listeners
+$(document).on("click", "a", request);
+$(document).on("animationend", ".animated", resetAnimate);
