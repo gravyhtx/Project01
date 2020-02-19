@@ -1,6 +1,74 @@
-body{
+/* body{
     background: navy;
-}
-h1, h3{
+} */
+/* h1, h3{
     color: whitesmoke;
+} */
+
+body {
+    background-image: url('assets/img/sbkg.jpg');
+    font-family: 'Questrial', 'Quicksand', sans-serif;
+    font-weight: 100;
+    
+  }
+
+h1 {
+    letter-spacing: 30px;
+    font-family: 'Quicksand', sans-serif;
 }
+
+h3 {
+    letter-spacing: -2px;
+    /* font-family: 'Quicksand', sans-serif; */
+}
+
+.yummy {
+color: #26d4f3;
+background-image: linear-gradient(32deg, #6dd3ca, #00ffd5, #70f5ea, #00ffd5, #bbf0eb, #00ffd5, #00ffea, #00ffd5, #00ffea);
+-webkit-background-clip: text;
+        background-clip: text;
+-webkit-text-fill-color: transparent;
+animation:  
+hue 10s linear infinite;
+}
+
+.yummyBtn {
+background-color: #26d4f3;
+background-image: linear-gradient(32deg, #6dd3ca, #00ffd5, #70f5ea, #00ffd5, #bbf0eb, #00ffd5, #00ffea, #00ffd5, #00ffea);
+-webkit-background-clip: text;
+        background-clip: text;
+-webkit-text-fill-color: transparent;
+animation:  
+hue 10s linear infinite;
+}
+
+  @keyframes hue {
+    from {
+      filter: hue-rotate(0deg);
+    }
+    
+    to {
+      filter: hue-rotate(-360deg);
+    }
+  }
+  /* @keyframes glowing {
+    0% { pos: 0 0; }
+    50% { position: 400% 0; }
+    100% { position: 0 0; }
+} */
+
+/* @keyframes hue {
+from {
+filter: hue-rotate(0deg);
+}
+
+to {
+filter: hue-rotate(-360deg);
+}
+} */
+
+/* @keyframes hue {
+0% { position: 0 0; }
+50% { position: 400% 0; }
+100% { position: 0 0; }
+} */
