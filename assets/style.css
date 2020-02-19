@@ -7,19 +7,24 @@
 
 body {
     background-image: url('assets/img/sbkg.jpg');
-    font-family: 'Questrial', 'Quicksand', sans-serif;
+    font-family: 'Questrial', sans-serif;
     font-weight: 100;
+    background-color: rgb(248, 252, 255);
     
   }
 
 h1 {
+    text-align: center;
     letter-spacing: 30px;
     font-family: 'Quicksand', sans-serif;
+    font-size: 60px;
+    font-weight: 100;
 }
 
 h3 {
+    text-align: center;
     letter-spacing: -2px;
-    /* font-family: 'Quicksand', sans-serif; */
+    color: rgb(51, 6, 40);
 }
 
 .yummy {
@@ -32,25 +37,88 @@ animation:
 hue 10s linear infinite;
 }
 
+.yummy2 {
+color: #26f3c0;
+background-image: linear-gradient(32deg, #6daad3, #00b7ff, #70cbf5, #00c3ff, #a5cce7, #00b7ff, #00c3ff, #0099ff, #0084ff);
+-webkit-background-clip: text;
+        background-clip: text;
+-webkit-text-fill-color: transparent;
+animation:  
+hue 10s  infinite;
+}
+
 .yummyBtn {
 background-color: #26d4f3;
-background-image: linear-gradient(32deg, #6dd3ca, #00ffd5, #70f5ea, #00ffd5, #bbf0eb, #00ffd5, #00ffea, #00ffd5, #00ffea);
+background-image: linear-gradient(32deg, #6dd3ca, #00ffd5, #70f5ea, #00ffd5, #73dfd4, #00ffd5, #00ffea, #00ffd5, #00ffea);
 -webkit-background-clip: text;
         background-clip: text;
 -webkit-text-fill-color: transparent;
 animation:  
 hue 10s linear infinite;
+filter: hue-rotate(0deg);
+animation: pulse 5s infinite cubic-bezier(0.2, 0, 0, 0.5);
+margin: 20px;
 }
 
-  @keyframes hue {
-    from {
-      filter: hue-rotate(0deg);
-    }
-    
-    to {
-      filter: hue-rotate(-360deg);
-    }
+@keyframes hue {
+from {
+    filter: hue-rotate(0deg) brightness(110%);
+}
+
+to {
+    filter: hue-rotate(-360deg);
+}
+}
+
+.pulse-button {
+
+  cursor: pointer;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.2, 0, 0, 0.5);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.2, 0, 0, 0.5);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.2, 0, 0, 0.5);
+  animation: pulse 1.25s infinite cubic-bezier(0.2, 0, 0, 0.5);
+}
+.pulse-button:hover 
+{
+  -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
+}
+
+#btn2 {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
   }
+  
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+  }
+  
+  #btn2:hover {
+    transition: 1s ease-in-out;
+    background: #4F95DA;
+  }
+  
+  #btn2:hover svg {
+    stroke-dashoffset: -480;
+  }
+  
+  #btn2 span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }
+
   /* @keyframes glowing {
     0% { pos: 0 0; }
     50% { position: 400% 0; }
