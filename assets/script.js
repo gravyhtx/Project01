@@ -65,3 +65,15 @@ function resetAnimate(){
 //Event Listeners
 $(document).on("click", "a", request);
 $(document).on("animationend", ".animated", resetAnimate);
+
+// Type Effect
+// setTimeout(myFunction, 3000)
+var showText = function (target, message, index, interval,) {   
+    if (index < message.length) {
+      $(target).append(message[index++]);
+      setTimeout(function () { showText(target, message, index, interval,); }, interval);
+    }
+  }
+  $(function () {
+    showText("#h3", "Tell me how you're feeling...", 0, 150,);   
+  });
