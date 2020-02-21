@@ -1,6 +1,8 @@
 body {
     background-image: url('img/wbkg.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Questrial', sans-serif;
     font-weight: 100;
     background-color: rgb(248, 252, 255);    

@@ -47,6 +47,22 @@ function request(){
             newRow.append(assemblyRow);
             container.append(newRow);
             slideIn();
+            // var musicPlayerCol = $("<div class='offset-l1 col s2'>");
+            // var dataExp = new RegExp(/(\/yt\/)/, "gmi");
+            // console.log(dataExp);
+            // var idOnly = response[i].eId.replace(dataExp, "");
+            // console.log(idOnly);
+            // var newPlayer = $("<div data-video='"+idOnly+"' data-autoplay='0' data-loop='1' id='youtube-audio'>");
+            // musicPlayerCol.append(newPlayer);
+            // assemblyRow.append(musicPlayerCol);
+            // var firstScript = $("<script>");
+            // var secondScript = $("<script>");
+            // firstScript.attr("src","https://www.youtube.com/iframe_api");
+            // console.log(firstScript);
+            // $("head").append(firstScript);
+            // secondScript.attr("src","https://cdn.rawgit.com/labnol/files/master/yt.js");
+            // console.log(secondScript)
+            // $("head").append(secondScript);
         }
     })
 }
@@ -77,3 +93,5 @@ var showText = function (target, message, index, interval,) {
   $(function () {
     showText("#h3", "Tell me how you're feeling...", 0, 150,);   
   });
+
+console.log(YT);
