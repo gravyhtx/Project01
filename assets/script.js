@@ -92,8 +92,10 @@ $(document).ready(function(){
     $(document).on("click", "a", request);
     $(document).on("animationend", ".animated", resetAnimate);
     
+    
     giphyRequest();
 });
+
 
 // Type Effect
 // setTimeout(myFunction, 3000)
