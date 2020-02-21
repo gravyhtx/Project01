@@ -118,12 +118,20 @@ $(document).ready(function(){
     //Event Listeners
     $(document).on("click", "a", request);
     $(document).on("animationend", ".animated", resetAnimate);
+    $(".fixed-action-btn").floatingActionButton();
     //giphyRequest();
     $(document).on("click", "a", giphyRequest);
     
     
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left',
+      hoverEnabled: false
+    });
+  });
 
 // Type Effect
 // setTimeout(myFunction, 3000)
