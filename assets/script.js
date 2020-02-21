@@ -8,25 +8,40 @@ var waddupURL = "https://openwhyd.org/u/5e4d6e9f7853a6bfdd389ff7/playlist/0?form
 var queryURL;
 
 var giphSearch = "galaxy";
-var giphyURL = "https://api.giphy.com/v1/gifs/search?api_key=rZTYUOqa0z6GfNo3cziHE0JP76USkDx1&q=" + giphSearch + "&limit=20&offset=0&rating=G&lang=en";
 
 function giphyRequest(){
+    if ($(this).text() === "Happy"){
+        giphSearch = "cute animals";
+    } else if ($(this).text() === "Focus"){
+        giphSearch = "psychadelic loop";
+    } else if ($(this).text() === "Angry"){
+        giphSearch = "death metal";
+    } else if ($(this).text() === "Melancholy"){
+        giphSearch = "sad art black and white";
+    } else if ($(this).text() === "Waddup"){
+        giphSearch = "trippy";
+    } else{
+        return;
+    }
+
+    var giphyURL = "https://api.giphy.com/v1/gifs/search?api_key=rZTYUOqa0z6GfNo3cziHE0JP76USkDx1&q=" + giphSearch + "&limit=20&offset=0&rating=G&lang=en";
     $.ajax({
         url: giphyURL,
         method: "GET",
     }).then(function(response){
         var giphArr = response.data;
+        // giphArr, filter out by specific sizes
+        $("#carouselDiv").empty();
         for (var i = 0; i < 4; i++){
-            var r = Math.floor(Math.random() *giphArr.length -1);
-            console.log(r);
+            var r = Math.floor(Math.random() *giphArr.length);
             var carouselItem = $("<a class='carousel-item'>");
-            var carouselGiph = $("<img class='responsive img' src="+response.data[r].images.downsized_large.url+">");
+            var carouselGiph = $("<img class='materialboxed' width='300' height='200' id = 'zoomEnhance' src="+response.data[r].images.original.url+">");
             carouselItem.append(carouselGiph);
             $("#carouselDiv").append(carouselItem);
             
-            console.log(response.data[r]);
         };
-        $('.carousel.carousel-slider').carousel({fullWidth: false});
+        $('.carousel').carousel();
+        $('.materialboxed').materialbox();
     })
 };
 
@@ -42,6 +57,8 @@ function request(){
         queryURL = melancholyURL;
     } else if ($(this).text() === "Waddup"){
         queryURL = waddupURL;
+    } else{
+        return;
     }
 
     container.empty();
@@ -102,8 +119,10 @@ $(document).ready(function(){
     $(document).on("click", "a", request);
     $(document).on("animationend", ".animated", resetAnimate);
     $(".fixed-action-btn").floatingActionButton();
+    //giphyRequest();
+    $(document).on("click", "a", giphyRequest);
     
-    giphyRequest();
+    
 });
 
 document.addEventListener('DOMContentLoaded', function() {
