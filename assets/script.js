@@ -7,7 +7,33 @@ var melancholyURL = "https://openwhyd.org/u/5e4d6e9f7853a6bfdd389ff7/playlist/4?
 var waddupURL = "https://openwhyd.org/u/5e4d6e9f7853a6bfdd389ff7/playlist/0?format=json";
 var queryURL;
 
+
+var giphSearch = "galaxy";
+var giphyURL = "https://api.giphy.com/v1/gifs/search?api_key=rZTYUOqa0z6GfNo3cziHE0JP76USkDx1&q=" + giphSearch + "&limit=20&offset=0&rating=G&lang=en";
+
+function giphyRequest(){
+    $.ajax({
+        url: giphyURL,
+        method: "GET",
+    }).then(function(response){
+        var giphArr = response.data;
+        for (var i = 0; i < 4; i++){
+            var r = Math.floor(Math.random() *giphArr.length -1);
+            console.log(r);
+            var carouselItem = $("<a class='carousel-item'>");
+            var carouselGiph = $("<img class='responsive img' src="+response.data[r].images.downsized_large.url+">");
+            carouselItem.append(carouselGiph);
+            $("#carouselDiv").append(carouselItem);
+            
+            console.log(response.data[r]);
+        };
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+    })
+};
+
+
 //Ajax request for playlist
+
 function request(){
     if ($(this).text() === "Happy"){
         queryURL = happyURL;
@@ -49,7 +75,7 @@ function request(){
             slideIn();
         }
     })
-}
+};
 
 //Animation Controller
 function slideIn(){
@@ -61,6 +87,16 @@ function resetAnimate(){
         var element = $(".getIn");
         element.removeClass("animated bounceInLeft");
 }
+
+
+$(document).ready(function(){
+  
+    //Event Listeners
+    $("#btnDivContainer").on("click", "a", request);
+    $(document).on("animationend", ".animated", resetAnimate);
+    
+    giphyRequest();
+});
 
 //Event Listeners
 $(document).on("click", "a", request);
@@ -77,3 +113,4 @@ var showText = function (target, message, index, interval,) {
   $(function () {
     showText("#h3", "Tell me how you're feeling...", 0, 150,);   
   });
+
