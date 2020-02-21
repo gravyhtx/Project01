@@ -1,17 +1,7 @@
 body {
-<<<<<<< HEAD
-<<<<<<< HEAD
     /* background-image: url('assets/img/sbkg.jpg'); */
-=======
     background-image: url('img/wbkg.jpg');
     background-size: cover;
->>>>>>> f2fd1e9d7a53931393a2fac1ac4a2e2e7c838e2c
-=======
-
-
-    background-image: url('img/wbkg.jpg');
-    background-size: cover;
->>>>>>> e49401069660948de5f60131debc4e1d0fc9a63f
     font-family: 'Questrial', sans-serif;
     font-weight: 100;
     background-color: rgb(248, 252, 255);    
@@ -125,3 +115,8 @@ background-color: #07bedf;
     font-size: 18px;
     font-weight: 100;
   }
+  
+  .giphy {
+    animation:
+    fadeIn ease-in 10s;
+    }
