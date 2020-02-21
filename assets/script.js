@@ -1,3 +1,17 @@
+// import { isConditional } from "babel-types";
+
+// Type Effect
+// setTimeout(myFunction, 3000)
+var showText = function (target, message, index, interval,) {   
+    if (index < message.length) {
+        $(target).append(message[index++]);
+        setTimeout(function () { showText(target, message, index, interval,); }, interval,);
+    }
+    }
+    $(function () {
+        showText("#h3", "Tell me how you're feeling...", 0, 150,);   
+    });
+
 //Variable Assignments
 var container = $("#parent");
 var happyURL = "https://openwhyd.org/u/5e4d6e9f7853a6bfdd389ff7/playlist/1?format=json";
@@ -62,18 +76,28 @@ function resetAnimate(){
         element.removeClass("animated bounceInLeft");
 }
 
+// Toggle Button
+
+// var toggleButton = function (play) {
+//     var img = play ? "play.svg" : "pause.svg";
+//     icon.setattribute("src", "img/" + img);
+// }
+
+// var img = play ? "play.svg" : "pause.svg";
+// var icon = $("#youtube-icon");
+// // icon.attr("src", "<my-icon>");
+
+// $(icon).on("click", function getImg(){
+//     if (player.getPlayerState() === YT.PlayerState.PLAYING ||
+//     play.getPlayerState() === YT.PlayerState.BUFFERING) {
+//         icon.setattribute("src", "img/pause.svg");
+//     }
+//     else {
+//         icon.setattribute("src", "img/play");
+//     }
+
+// };
+
 //Event Listeners
 $(document).on("click", "a", request);
 $(document).on("animationend", ".animated", resetAnimate);
-
-// Type Effect
-// setTimeout(myFunction, 3000)
-var showText = function (target, message, index, interval,) {   
-    if (index < message.length) {
-      $(target).append(message[index++]);
-      setTimeout(function () { showText(target, message, index, interval,); }, interval);
-    }
-  }
-  $(function () {
-    showText("#h3", "Tell me how you're feeling...", 0, 150,);   
-  });

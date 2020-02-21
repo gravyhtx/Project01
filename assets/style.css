@@ -1,5 +1,11 @@
 body {
     background-image: url('img/wbkg.jpg');
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    /* background-size: cover; */
+    background-repeat: no-repeat, repeat;
+    background-attachment: fixed;
     background-size: cover;
     font-family: 'Questrial', sans-serif;
     font-weight: 100;
