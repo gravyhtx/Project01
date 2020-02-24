@@ -1,6 +1,16 @@
 body {
     /* background-image: url('assets/img/sbkg.jpg'); */
+<<<<<<< HEAD
     background-image: url('img/fbkg.jpg');
+=======
+    background-image: url('img/wbkg.jpg');
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    /* background-size: cover; */
+    background-repeat: no-repeat, repeat;
+    background-attachment: fixed;
+>>>>>>> 99c6ee737ca301f7a30c3d73fe19769fc204c46e
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

@@ -1,3 +1,17 @@
+// import { isConditional } from "babel-types";
+
+// Type Effect
+// setTimeout(myFunction, 3000)
+var showText = function (target, message, index, interval,) {   
+    if (index < message.length) {
+        $(target).append(message[index++]);
+        setTimeout(function () { showText(target, message, index, interval,); }, interval,);
+    }
+    }
+    $(function () {
+        showText("#h3", "Tell me how you're feeling...", 0, 150,);   
+    });
+
 //Variable Assignments
 var container = $("#parent");
 var happyURL = "https://openwhyd.org/u/5e4d6e9f7853a6bfdd389ff7/playlist/1?format=json";
@@ -112,6 +126,7 @@ function resetAnimate(){
         element.removeClass("animated bounceInLeft");
 }
 
+
 $(document).ready(function(){
   
     
@@ -146,3 +161,4 @@ var showText = function (target, message, index, interval,) {
   });
 
 console.log(YT);
+
